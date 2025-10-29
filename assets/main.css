@@ -1,0 +1,299 @@
+body {
+    margin: 5px !important;
+    padding: 5px;
+    background: #ffe url("fade.png") top center repeat-x;
+    color: maroon;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+body > div {
+    display: flex;
+    min-height: calc(100vh - 10px);
+}
+#chash {
+    overflow: hidden;
+}
+
+aside {
+    width: 300px;
+    margin: 8px;
+    padding: 8px;
+    flex-shrink: 0;
+    background: #f0e0d6;
+    border: 1px solid #d9bfb7;
+}
+
+aside h2 {
+    color: maroon;
+    margin: 0 0 8px 0;
+    font-size: 12pt;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid #d9bfb7;
+    padding-bottom: 5px;
+}
+
+aside p {
+    color: maroon;
+    font-size: 8pt;
+    font-weight: 800;
+    margin: 8px 0 0 0;
+    text-align: center;
+}
+
+aside a {
+    color: #117743;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+aside a:hover {
+    color: #0d5a2c;
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+form label {
+    font-weight: 700;
+    color: maroon;
+    font-size: 9pt;
+    margin-bottom: 1px;
+}
+
+form input, form textarea {
+    padding: 3px 4px;
+    border: 1px solid #d9bfb7;
+    background-color: #f0e0d6;
+    color: maroon;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 9pt;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #800;
+    background-color: #fff;
+}
+
+form button {
+    padding: 6px 12px;
+    background: #ea8;
+    color: #800;
+    border: 1px solid #800;
+    font-weight: 700;
+    font-size: 9pt;
+    cursor: pointer;
+    font-family: arial, helvetica, sans-serif;
+    margin-top: 4px;
+    align-self: flex-start;
+}
+
+form button:hover {
+    background: #d9a;
+}
+
+form button:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+#powstat {
+    margin-top: 6px;
+    padding: 4px 6px;
+    background: #ea8;
+    border: 1px solid #800;
+    font-size: 8pt;
+    color: #800;
+    font-weight: 700;
+    border-radius: 2px;
+}
+
+#powstat.hidden {
+    display: none;
+}
+
+#powmsg {
+    display: block;
+    margin-bottom: 3px;
+}
+
+#hash-display {
+    margin-top: 4px;
+    font-family: monospace;
+    font-size: 7pt;
+    background: rgba(0,0,0,0.1);
+    padding: 3px;
+    border-radius: 1px;
+}
+
+#hash-display div {
+    margin-bottom: 1px;
+    line-height: 1.2;
+}
+
+main {
+    flex: 1;
+    margin: 8px;
+    padding: 5px;
+    overflow-y: auto;
+    background: transparent;
+}
+
+#posts-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-container {
+    margin: 8px;
+    padding: 5px;
+    background: #f0e0d6;
+    border: 1px solid #d9bfb7;
+}
+
+.post-container .p-4 {
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+}
+
+.post-container .bg-geist-card {
+    background-color: transparent !important;
+}
+
+.post-container .border-geist-border {
+    border: none !important;
+}
+
+.post-container .hover\\:bg-geist-card-hover:hover {
+    background-color: transparent !important;
+}
+
+.post-container .mb-4 {
+    margin-bottom: 0 !important;
+}
+
+/* Post header styling - 4chan style */
+.post-container .flex.items-baseline.justify-between {
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #d9bfb7;
+}
+
+.post-container .font-medium {
+    font-weight: 700;
+    color: #117743;
+}
+
+.post-container .text-xs {
+    font-size: 8pt;
+    color: maroon;
+}
+
+.post-container .text-geist-muted-foreground {
+    color: maroon !important;
+}
+
+.post-container .text-geist-foreground {
+    color: maroon !important;
+}
+
+/* Post content styling */
+.post-container p {
+    margin: 0;
+    line-height: 1.3;
+    color: maroon;
+    font-size: 10pt;
+}
+
+@media (max-width: 768px) {
+    body > div {
+        flex-direction: column;
+    }
+    
+    aside {
+        width: calc(100% - 16px);
+        border-right: none;
+        border-bottom: 1px solid #d9bfb7;
+    }
+    
+    main {
+        margin: 8px;
+        padding: 5px;
+    }
+}
+
+.infoBox {
+    background: #ea8;
+    border: 1px solid #800;
+    padding: 0 5px;
+}
+
+.postName {
+    color: #117743;
+    font-weight: 700;
+}
+
+#postBox {
+    margin: 8px;
+    background: #f0e0d6;
+    border: 1px solid #d9bfb7;
+}
+
+td:first-child {
+    background-color: #ea8;
+    color: #800;
+    font-weight: 700;
+    border: 1px solid #800;
+    padding: 0 5px;
+    font-size: 10pt;
+}
+
+textarea {
+    width: 320px;
+    height: 100px;
+}
+
+#powered {
+    margin: 8px;
+    padding: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+}
+
+.lmao {
+    font-family: serif;
+    font-weight: bolder !important;
+    font-size: 23px !important;
+    font-style: italic;
+}
+
+.cranking {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
