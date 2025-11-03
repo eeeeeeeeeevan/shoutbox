@@ -13,7 +13,10 @@ if ($_SERVER['REQUEST_METHOD']!=='POST' || $_POST['action'] !== 'get_challenge')
 // if (!isset($_SESSION['legacycall'])) {
 //     $_SESSION['legacycall'] = bin2hex(random_bytes(32));
 // }
-
+// cookie init
+if (!isset($_COOKIE['legacycall'])) {
+    setcookie('legacycall', password_hash(bin2hex(random_bytes(32)), PASSWORD_ARGON2I), time()+3600, '/');
+}
 
 if (!isset($_SESSION['challenges'])) { // how
     $_SESSION['challenges'] = [];
@@ -21,7 +24,7 @@ if (!isset($_SESSION['challenges'])) { // how
 
 $_SESSION['challenges'] = array_filter($_SESSION['challenges'], function($challenge) {
     // shit impl because time() but whatever
-    return time()-$challenge['timestamp'] < 300; 
+    return time()-$challenge['timestamp'] < 300;
 });
 
 $chalid = bin2hex(random_bytes(16));
