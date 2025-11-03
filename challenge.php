@@ -9,6 +9,12 @@ if ($_SERVER['REQUEST_METHOD']!=='POST' || $_POST['action'] !== 'get_challenge')
 //
 //$time = time(NULL);
 //if ()
+// set legacycall to this 
+if (!isset($_SESSION['legacycall'])) {
+    $_SESSION['legacycall'] = bin2hex(random_bytes(32));
+}
+
+
 if (!isset($_SESSION['challenges'])) { // how
     $_SESSION['challenges'] = [];
 }

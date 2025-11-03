@@ -88,8 +88,10 @@ $template = <<<HTML
 </div>
 HTML;
 
-
-
+// fallback
+if (!file_exists("posts.html")) {
+    file_put_contents("posts.html", $template);
+}
 
 $postHTML = str_replace("<_POSTNAME_>", $postName, $template);
 $postHTML = str_replace("<_POSTTEXT_>", $postText, $postHTML);
